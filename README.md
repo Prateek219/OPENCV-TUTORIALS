@@ -125,7 +125,7 @@ each pixel is.
 is stored in the array
 
 #### Let’s have a closer look at different types of images.
-# Binary Image
+## Binary Image
 Again, as the name suggest each number associated with
 the pixel can have just one of the two possible values.
 - Each pixel is a 1 bit number.
@@ -134,3 +134,14 @@ the pixel can have just one of the two possible values.
 - 1 corresponds to White
 - Number of channels of a binary Image is 1
 - Depth of a binary image is 1(bit)
+![Screenshot (85)](https://user-images.githubusercontent.com/64007722/79853135-482ed680-83e5-11ea-86cf-a44af829bc67.png)
+
+
+
+## Grayscale Image
+- Each pixel is a 8 bit number
+- It can take values from 0-255
+- Each value corresponds to a shade between black
+and white( 0 for black and 255 for white)
+- Number of channels for a grayscale image is 1
+- Depth of a gray scale image is 8(bits)
