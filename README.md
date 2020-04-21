@@ -684,8 +684,7 @@ void detect_and_draw( IplImage* img )
                                                      // Find whether the cascade is loaded, to find the faces. If yes, then:
 if( cascade )
  {
-                                                               // There can be more than one face in an image. So create a growable
-sequence of faces.
+                                         // There can be more than one face in an image. So create a growable sequence of faces.
                                                                             // Detect the objects and store them in the sequence
  CvSeq* faces = cvHaarDetectObjects( img, cascade, storage,
  1.1, 2, CV_HAAR_DO_CANNY_PRUNING,
