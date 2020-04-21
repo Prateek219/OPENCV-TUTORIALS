@@ -289,7 +289,7 @@ This will create a RGB image(most general case among the three types of
 images discussed) without specifying pixel values
 ## 2. Some common OpenCV functions
 
-- __output=cvCloneImage(input) -----Copies image from input to output__
+- output=cvCloneImage(input) -----__Copies image from input to output__
 
 - __cvCvtColor( input, output, conversion type)
  __{ Conv. type : CV_BGR2GRAY ,CV_BGR2HSV}
