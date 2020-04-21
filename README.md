@@ -262,8 +262,8 @@ always clear the memory assigned to variables.
 It is therefore advisable to release the image and destroy the window
 created:
 
-cvDestroyWindow( "Output" ); //_destroy the window
+cvDestroyWindow( "Output" ); // _destroy the window_
 
-cvReleaseImage( &input ); //_release the memory for the image
+cvReleaseImage( &input ); // _release the memory for the image_
 
 Include above two lines to make it a good simple code.
