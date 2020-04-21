@@ -493,3 +493,26 @@ __CvCapture* capture=cvCreateFileCapture("file_name.avi" );__
 And for extracting frames use the following function:
 
 __Ipl Image* input_frame=cvQueryFrame(capture);__
+
+## 7. Camera Input
+First camera needs to be initialized and then image is captured and further
+
+operations can be carried out on that image. 
+
+Use the following command for initiating the camera:
+
+__CvCapture *capture=cvCreateCameraCapture(0);__
+
+0 stands for default webcam and to access other camera connected to the
+
+computer use 1 as argument.
+
+Starting a camera takes time, so make sure that sufficient time has passed
+
+before we capture the image. This can be achieved through
+
+__for(int i=0;i<100000000&& capture!=NULL ;i++);__
+
+Finally image is captured and stored in variable of type IplImage*
+
+__frame=cvQueryFrame(capture);__
