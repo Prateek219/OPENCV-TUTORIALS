@@ -516,3 +516,17 @@ __for(int i=0;i<100000000&& capture!=NULL ;i++);__
 Finally image is captured and stored in variable of type IplImage*
 
 __frame=cvQueryFrame(capture);__
+
+
+## 8. Video input through camera
+This is similar to video input all you need is attach the video from camera
+
+to the input stream. Following function helps us do so:
+
+__CvCapture *capture=cvCreateCameraCapture(0);__
+
+There is no need to initialize the camera in this case because frame is
+
+captured regularly. Again, 0 for default webcam and use 1 for input
+
+through external camera.
