@@ -119,7 +119,18 @@ three types of images:
 Each kind of image has few attributes attached to it like number
 of channels and depth .
 
-- Number of channels : Defines the dimension of array ,
+- __Number of channels__ : Defines the dimension of array ,
 each pixel is.
-- Depth : Defines the maximum bit size of the number which
+- __Depth__ : Defines the maximum bit size of the number which
 is stored in the array
+
+#### Let’s have a closer look at different types of images.
+# Binary Image
+Again, as the name suggest each number associated with
+the pixel can have just one of the two possible values.
+- Each pixel is a 1 bit number.
+- It can take either 0 or 1 as its value.
+- 0 corresponds to Black
+- 1 corresponds to White
+- Number of channels of a binary Image is 1
+- Depth of a binary image is 1(bit)
