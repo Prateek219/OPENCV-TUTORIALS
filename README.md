@@ -374,4 +374,26 @@ cvReleaseImage( &erode );
 return 0;
 }
 ```
+## 4. Thresholding an image
+Thresholding an image is one of the simplest ways of image segmentation.
+As the name suggests, it carries out its change according to a set
+threshold.
 
+To threshold an image following function is used:
+cvThreshold(input, output, threshold, maxValue, thresholdType)]
+Following threshold types are available'
+
+- __CV_THRESH_BINARY__
+ -----max value if more than threshold, else 0
+- __CV_THRESH_BINARY_INV__
+ -----0 if more than threshold, else max value
+- __CV_THRESH_TRUNC__
+ -----threshold if more than threshold, else no change
+- __CV_THRESH_TOZERO__
+ ------no change if more than threshold else 0
+- __CV_THRESH_TOZERO_INV__
+ ------0 if more than threshold, else no change
+ 
+Before we threshold the image we need to make a clone of the image.
+Example image for binary image has been obtained from the example
+grayscale image of ‘beautiful Lena’.
