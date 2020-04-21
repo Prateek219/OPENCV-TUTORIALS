@@ -175,6 +175,95 @@ We will need following header files:
 - __highgui.h
 
 ### Image is stored as a structure IplImage with following elements
-```
+
+![Screenshot (92)](https://user-images.githubusercontent.com/64007722/79854651-6a295880-83e7-11ea-9318-ac92b4ada325.png)
+
+
+__There is no need to go into the details right now, we will get acquainted
+with these elements during the course of the tutorial.__
+
+
+#### Steps involved:
+We first need to initialize a pointer to the image ( structure)
+
+__IplImage * input;
+
+Next, load the desired image to the pointer
+
+__input = cvLoadImage(“filename.extension”,1);
+
+[1 for colored and 0 for grayscale]
+
+Note: The image must be stored in the same folder in which you save the
+C program.
+
+To display the loaded image you will need a window.
+
+__cvNamedWindow (“window name”, 1);
+
+Again [1 for colored and 0 for grayscale]
+
+Above command creates a window and to display the loaded image we
+
+use the following command:
+
+__cvShowImage(“window name”, input);
+
+Suppose you have an image named __“shivendu.jpg”__ in the same folder in
+
+which you save your code then your code would look something similar to
+
+the following 
 
 ```
+#inclde “cv.h”
+#include “ highgui.h”
+Int main()
+{
+ IplImage * input;
+ input = cvLoadImage(“shivendu.jpg”,1);
+ cvNamedWindow(“Output”,1);
+ cvShowImage(“Output”, input);
+}
+
+```
+
+If you try to execute this code the output window flickers just once. To
+appreciate the output we need __cvWaitKey(number)__
+
+- If 0 or negative number is given as input: - Waits indefinitely till key
+press and returns the ASCII value of the key pressed.
+
+- If positive number is given as input: - Waits for corresponding
+milliseconds.
+
+#### NOW THE FINAL CODE LOOKS LIKE
+
+```
+#inclde “cv.h”          // Include header files
+#include “ highgui.h”
+Int main()
+{
+ IplImage * input;       // Variable declaration
+ input = cvLoadImage(“shivendu.jpg”,1);       // Loads the image
+cvNamedWindow(“Output”,1);           // Creates a window to
+display image
+ cvShowImage(“Output”, input);         // Displays the image
+cvWaitKey(0);                  // Waits till a key is pressed
+}
+
+
+```
+
+This simple code must have helped you in understanding the flow of the
+program (This is how things work with OpenCV). A good programmer will
+always clear the memory assigned to variables.
+
+It is therefore advisable to release the image and destroy the window
+created:
+
+cvDestroyWindow( "Output" ); //_destroy the window
+
+cvReleaseImage( &input ); //_release the memory for the image
+
+Include above two lines to make it a good simple code.
