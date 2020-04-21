@@ -716,6 +716,13 @@ IplImage *face = cvCreateImage(cvGetSize(img),img->depth,img-
 
 >nChannels);
 
- cvCopy(img, face, NULL); //Copies interested area of image in face
+ cvCopy(img, face, NULL); // _Copies interested area of image in face_
  
 cvResetImageROI(img);
+
+## 13. Blob detection edge detection
+These are some of other actions which can be performed using OpenCV
+
+And there are numerous other interesting features of OpenCV
+
+available for playing with the images. Enjoy! Playing with images 
