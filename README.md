@@ -380,7 +380,9 @@ As the name suggests, it carries out its change according to a set
 threshold.
 
 To threshold an image following function is used:
+
 __cvThreshold(input, output, threshold, maxValue, thresholdType)]__
+
 __Following threshold types are available'__
 
 - __CV_THRESH_BINARY__
