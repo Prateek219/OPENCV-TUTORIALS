@@ -324,6 +324,9 @@ Dilation dilates the image. It tries to bring uniformity in image by
 converting dark points in neighborhood of points of higher intensity into
 bright ones
 
+![Screenshot (96)](https://user-images.githubusercontent.com/64007722/79861733-7961d380-83f2-11ea-8597-fcc33a9037bb.png)
+
+
 
 Here, is the code which erodes and dilates an image saved in the same
 folder where c code is saved
