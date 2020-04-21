@@ -290,10 +290,12 @@ images discussed) without specifying pixel values
 ## 2. Some common OpenCV functions
 
 - __output=cvCloneImage(input) -----Copies image from input to output__
+
 - __cvCvtColor( input, output, conversion type)
  __{ Conv. type : CV_BGR2GRAY ,CV_BGR2HSV}
  __-----Saves input image in output pointer in__
  __other color space__
+ 
 - __cvSaveImage("output.jpg",output)
  __-----Saves image pointed by output naming it output__
 ## 3. Morphological operations on a image
