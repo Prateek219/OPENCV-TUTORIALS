@@ -289,14 +289,13 @@ This will create a RGB image(most general case among the three types of
 images discussed) without specifying pixel values
 ## 2. Some common OpenCV functions
 
-- output=cvCloneImage(input)
- -----Copies image from input to output
-- cvCvtColor( input, output, conversion type)
- { Conv. type : CV_BGR2GRAY ,CV_BGR2HSV}
- -----Saves input image in output pointer in
+- __output=cvCloneImage(input) -----Copies image from input to output__
+- __cvCvtColor( input, output, conversion type)
+ __{ Conv. type : CV_BGR2GRAY ,CV_BGR2HSV}
+ __-----Saves input image in output pointer in
  other color space
 - cvSaveImage("output.jpg",output)
- -----Saves image pointed by output naming it output
+ __-----Saves image pointed by output naming it output
 ## 3. Morphological operations on a image
 There are two different kinds of morphological operations :
 
