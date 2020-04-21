@@ -530,3 +530,47 @@ There is no need to initialize the camera in this case because frame is
 captured regularly. Again, 0 for default webcam and use 1 for input
 
 through external camera.
+
+## 9. Playing with the mouse
+For moving the mouse we use the following function declaration:
+
+```
+void Mouse_Move(DWORD dx,DWORD dy)
+{
+DWORD event=0;
+event = MOUSEEVENTF_ABSOLUTE|MOUSEEVENTF_MOVE;
+mouse_event(event, dx*65535/Get_ScreenWidth(),
+dy*65535/Get_ScreenHieght(), 0, 0);
+}
+Function definition for Get_ScreenWidth():
+LONG Get_ScreenWidth()
+{
+RECT rect;
+GetWindowRect(GetDesktopWindow(),&rect); //Get Desktop rect
+return rect.right - rect.left;
+}
+Function definition for Get_Screen_Hieght():
+LONG Get_ScreenHieght()
+{
+RECT rect;
+GetWindowRect(GetDesktopWindow(),&rect); //Get Desktop rect
+return rect.bottom - rect.top;
+}
+Pass the x and y co-ordinates of the screen as parameters and mouse
+pointer will be moved to the corresponding location.
+Following function prints the RGB values of the pixel at which mouse
+pointer is pointing to.
+void my_mouse_callback( int event, int x, int y, int flags, void* param )
+{
+ uchar *pimage = (uchar*)image->imageData;
+printf("\nx=%d\t y=%d\n r=%d \tg=%d \tb=%d\n",x,y,
+pimage[y*image->widthStep + x*image->nChannels+2], pimage[y*image-
+>widthStep + x*image->nChannels+1], pimage[y*image->widthStep +
+x*image->nChannels+0]);
+}
+To call the above declared function use the following:
+cvNamedWindow("image",1);
+cvSetMouseCallback("image", my_mouse_callback, NULL);
+ cvShowImage("image",image);
+
+```
