@@ -681,10 +681,10 @@ void detect_and_draw( IplImage* img )
  int i;
                                                            // Clear the memory storage which was used before
  cvClearMemStorage( storage );
-                                                         // Find whether the cascade is loaded, to find the faces. If yes, then:
+                                                     // Find whether the cascade is loaded, to find the faces. If yes, then:
 if( cascade )
  {
-                                                                     // There can be more than one face in an image. So create a growable
+                                                               // There can be more than one face in an image. So create a growable
 sequence of faces.
                                                                             // Detect the objects and store them in the sequence
  CvSeq* faces = cvHaarDetectObjects( img, cascade, storage,
@@ -695,7 +695,7 @@ sequence of faces.
  {
  // Create a new rectangle for drawing the face
  CvRect* r = (CvRect*)cvGetSeqElem( faces, i ); 
-                                                                    // Find the dimensions of the face, and scale it if necessary
+                                                              // Find the dimensions of the face, and scale it if necessary
  pt1.x = r->x*scale;
  pt2.x = (r->x+r->width)*scale;
  pt1.y = r->y*scale;
