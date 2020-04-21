@@ -403,3 +403,26 @@ __Following threshold types are available'__
 Before we threshold the image we need to make a clone of the image.
 Example image for binary image has been obtained from the example
 grayscale image of ‘beautiful Lena’.
+
+## 5. Image data
+An image’s data is stored as a character array whose first element is
+pointed by:-
+
+__Input->imageData ( char pointer )__
+
+Number of array elements in 1 row is stored in
+
+__input->widthStep__
+
+Accessing pixel values in a grayscale image:
+
+To find the pixel value in an image we need to define a pointer of type
+
+__uchar:
+
+__uchar *pinput = (uchar*)input->imageData;__
+
+Following image will explain how an image is accessed.
+To get the (i,j) pixel value we start traversing the first row pixel by pixel
+Until we reach the end of it and then move to the next row and
+continue the process until we reach the (i,j) pixel.
