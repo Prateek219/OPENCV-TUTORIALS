@@ -34,3 +34,6 @@ link the library with the installed compiler.
 ### For integrating OpenCV with DevC++ :
 - First of all, you have to indicate the header files you want to add. For
 that, select Tools->Compiler Options.
+![Screenshot (76)](https://user-images.githubusercontent.com/64007722/79848721-14e94900-83df-11ea-9d3e-793e2a5380da.png)
+- Then click on the plus sign(under compiler set to configure) to add a
+new compiler named here, OpenCV.
