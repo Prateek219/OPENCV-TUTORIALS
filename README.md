@@ -426,3 +426,6 @@ Following image will explain how an image is accessed.
 To get the (i,j) pixel value we start traversing the first row pixel by pixel
 Until we reach the end of it and then move to the next row and
 continue the process until we reach the (i,j) pixel.
+
+
+![Screenshot (101)](https://user-images.githubusercontent.com/64007722/79863178-ea09ef80-83f4-11ea-9dcb-1d05e1cf671f.png)
