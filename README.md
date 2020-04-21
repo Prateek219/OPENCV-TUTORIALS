@@ -98,3 +98,27 @@ support drawing functions and other algorithms.
 
 Depending on what your program implements you wish to use,
 you should include corresponding modules.
+
+
+# Image Processing
+“Image Processing” is what it intuitively suggests.
+Image processing is IMAGE + PROCESSING .
+What is an Image?
+- Image is a collection of PIXELS.
+- Each pixel is like an array of numbers.
+- These numbers determine the color of the pixel.
+Now let me introduce you to different types of images. There are
+three types of images:
+-- Binary image,
+
+-- Grayscale Image and,
+
+-- Coloured image.
+
+Each kind of image has few attributes attached to it like number
+of channels and depth .
+
+- Number of channels : Defines the dimension of array ,
+each pixel is.
+- Depth : Defines the maximum bit size of the number which
+is stored in the array
