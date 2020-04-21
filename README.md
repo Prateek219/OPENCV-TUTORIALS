@@ -619,9 +619,93 @@ __GWL_EXSTYLE) | WS_EX_TOPMOST);__
 
 //show the new window
 
-ShowWindow(win_handle, SW_SHOW);
+__ShowWindow(win_handle, SW_SHOW);__
 
 _Now, some playing with human features:_
 
+## 11. Haar Cascades
+Haar like features are digital image features used in object recognition.
+Haar Cascades are trained classifiers used for detecting features like face,
+eyes, upper body etc.
 
+These cascades are stored in the data folder of OpenCV.
 
+Firstly, you need to load cascade and then use the cascade to detect the
+presence of the corresponding feature. In most cases you need to mark
+the region of your interest. Following code detects eyes and marks a
+rectangle around the eyes.
+
+#include "cv.h"
+
+#include "highgui.h"
+
+#include "math.h"
+
+#include "cxcore.h"
+
+static CvMemStorage* storage = 0;
+
+static CvHaarClassifierCascade* cascade = 0;
+
+const char* cascade_name =
+
+"C:/OpenCV2.1/data/haarcascades/haarcascade_eye.xml";
+// This is the address of the cascade used for eye detection on my machine
+
+__void detect_and_draw( IplImage* img );__
+```
+int main()
+{
+ IplImage* frame; //Initialise input image pointer
+ cascade = (CvHaarClassifierCascade*)cvLoad( cascade_name, 0, 0, 0 );
+ int c;
+ if( !cascade )
+ {
+ fprintf( stderr, "ERROR: Could not load classifier cascade\n" );
+ return -1;
+ }
+ frame = cvLoadImage("reformed.jpg",1);
+ storage = cvCreateMemStorage(0);
+ detect_and_draw(frame);
+ cvWaitKey(0);
+ return 0;
+}
+void detect_and_draw( IplImage* img )
+{
+ int scale = 1;
+ // Create a new image based on the input image
+ IplImage* temp = cvCreateImage( cvSize(img->width/scale,img-
+>height/scale), 8, 3 );
+ // Create two points to represent the face locations
+ CvPoint pt1, pt2;
+ int i;
+ // Clear the memory storage which was used before
+ cvClearMemStorage( storage );
+ // Find whether the cascade is loaded, to find the faces. If yes, then:
+if( cascade )
+ {
+ // There can be more than one face in an image. So create a growable
+sequence of faces.
+ // Detect the objects and store them in the sequence
+ CvSeq* faces = cvHaarDetectObjects( img, cascade, storage,
+ 1.1, 2, CV_HAAR_DO_CANNY_PRUNING,
+ cvSize(40, 40) );
+ // Loop the number of faces found.
+ for( i = 0; i < (faces ? faces->total : 0); i++ )
+ {
+ // Create a new rectangle for drawing the face
+ CvRect* r = (CvRect*)cvGetSeqElem( faces, i ); 
+ // Find the dimensions of the face, and scale it if necessary
+ pt1.x = r->x*scale;
+ pt2.x = (r->x+r->width)*scale;
+ pt1.y = r->y*scale;
+ pt2.y = (r->y+r->height)*scale;
+ // Draw the rectangle in the input image
+ cvRectangle( img, pt1, pt2, CV_RGB(255,0,0), 3, 8, 0 );
+ }
+ }
+ // Show the image in the window named "result"
+ cvShowImage( "result", img );
+ // Release the temp image created.
+ cvReleaseImage( &temp );
+```
