@@ -134,6 +134,7 @@ the pixel can have just one of the two possible values.
 - 1 corresponds to White
 - Number of channels of a binary Image is 1
 - Depth of a binary image is 1(bit)
+
 ![Screenshot (85)](https://user-images.githubusercontent.com/64007722/79853135-482ed680-83e5-11ea-86cf-a44af829bc67.png)
 
 
@@ -145,3 +146,16 @@ the pixel can have just one of the two possible values.
 and white( 0 for black and 255 for white)
 - Number of channels for a grayscale image is 1
 - Depth of a gray scale image is 8(bits)
+
+![Screenshot (88)](https://user-images.githubusercontent.com/64007722/79853510-ca1eff80-83e5-11ea-80ce-6583684197e4.png)
+
+
+## RGB Image
+- Each pixel stores three values:
+1.R : 0-255
+2.G : 0-255
+3.B : 0-255
+- Each number between 0-255 corresponds to a
+shade of corresponding color
+- Depth of a RGB image is 8(bits)
+- Number of channels for a RGB image is 3
