@@ -418,7 +418,7 @@ Accessing pixel values in a grayscale image:
 
 To find the pixel value in an image we need to define a pointer of type
 
-__uchar:
+__uchar:__
 
 __uchar *pinput = (uchar*)input->imageData;__
 
