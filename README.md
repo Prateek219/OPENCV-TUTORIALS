@@ -267,3 +267,41 @@ __cvDestroyWindow( "Output" );__ // _destroy the window_
 __cvReleaseImage( &input );__ // _release the memory for the image_
 
 Include above two lines to make it a good simple code.
+
+
+## 1. Creating an image
+To create an image you need to provide the following details
+
+- Size( height and width)
+
+- Depth
+
+- Number of channels
+
+- And specify the pixel values
+
+For creating an image we need we use the following function:
+
+__output=cvCreateImage(cvGetSize(input),IPL_DEPTH_8U,3)__
+
+This will create a RGB image(most general case among the three types of
+
+images discussed) without specifying pixel values
+## 2. Some common OpenCV functions
+
+- output=cvCloneImage(input)
+ -----Copies image from input to output
+- cvCvtColor( input, output, conversion type)
+ { Conv. type : CV_BGR2GRAY ,CV_BGR2HSV}
+ -----Saves input image in output pointer in
+ other color space
+- cvSaveImage("output.jpg",output)
+ -----Saves image pointed by output naming it output
+## 3. Morphological operations on a image
+There are two different kinds of morphological operations :
+
+   * 1. Erosion
+
+   * 2. Dilation
+For carrying out morphological operations we need to specify type of
+structural element and number of iterations.
