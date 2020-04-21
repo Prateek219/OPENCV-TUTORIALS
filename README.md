@@ -574,3 +574,54 @@ cvSetMouseCallback("image", my_mouse_callback, NULL);
  cvShowImage("image",image);
 
 ```
+
+## 10. Displaying an Image in Full screen
+Displaying an image in full screen basically means getting rid of the
+borders. This can be done by using a handle for the image.
+
+
+//generate window
+
+__cvNamedWindow("main_win", CV_WINDOW_AUTOSIZE);__
+
+//move it to initial
+
+__cvMoveWindow("main_win", 0, 0);__
+
+//set it's size to maximum possible
+
+__cvSetWindowProperty("main_win", CV_WINDOW_FULLSCREEN,__
+
+__CV_WINDOW_FULLSCREEN);__
+
+//show the image
+
+__cvShowImage("main_win", cv_img);__
+
+//set up the handle for the image
+
+__HWND win_handle = FindWindow(0, "main_win");__
+
+//if handle fails to load
+
+__if (!win_handle)__
+
+{
+ __printf("Failed FindWindow\n");__
+ 
+}
+
+//modify the 'handle' so that 'window' is deprived of borders
+
+__SetWindowLong(win_handle, GWL_STYLE, GetWindowLong(win_handle,__
+
+__GWL_EXSTYLE) | WS_EX_TOPMOST);__
+
+//show the new window
+
+ShowWindow(win_handle, SW_SHOW);
+
+Now, some playing with human features:
+
+
+
