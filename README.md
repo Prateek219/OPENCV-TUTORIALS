@@ -50,6 +50,13 @@ installed OpenCV in the default folder. ]
 ## Configuring included files
 Next, click on Directories and then on C Includes to add all the headers,
 located in some C:\OpenCV2.1 subdirectories. You only need to
-add C:\OpenCV2.1\include\opencv in the include tab to get things to
+add __C:\OpenCV2.1\include\opencv__ in the include tab to get things to
 work.
-If you want to code in C++ then do the same for C++ includes
+
+__If you want to code in C++ then do the same for C++ includes__
+![Screenshot (80)](https://user-images.githubusercontent.com/64007722/79849655-5fb79080-83e0-11ea-94f7-2208f91824a1.png)
+
+## Configuring static library files
+In the libraries section under the same heading directories you will
+need to add __C:\ OpenCV2.1\lib__ . (if already present, ignore this
+step.)
