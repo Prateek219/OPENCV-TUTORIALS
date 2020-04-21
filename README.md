@@ -109,11 +109,12 @@ What is an Image?
 - These numbers determine the color of the pixel.
 Now let me introduce you to different types of images. There are
 three types of images:
--- Binary image,
 
--- Grayscale Image and,
+   * Binary image,
 
--- Coloured image.
+   * Grayscale Image and,
+
+   * Coloured image.
 
 Each kind of image has few attributes attached to it like number
 of channels and depth .
