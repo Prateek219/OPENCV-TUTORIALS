@@ -60,3 +60,41 @@ __If you want to code in C++ then do the same for C++ includes__
 In the libraries section under the same heading directories you will
 need to add __C:\ OpenCV2.1\lib__ . (if already present, ignore this
 step.)
+![Screenshot (83)](https://user-images.githubusercontent.com/64007722/79850748-f9cc0880-83e1-11ea-94b4-dfbc56d145da.png)
+
+## Configuring dynamic library files
+
+And to finish, add the bin directory where the dlls are:
+i.e. add __C:\ OpenCV2.1\bin__ to _binaries_ subdivision.
+![Screenshot (83)](https://user-images.githubusercontent.com/64007722/79850748-f9cc0880-83e1-11ea-94b4-dfbc56d145da.png)
+## Congratulations..!!
+With this, You are done with configuring _OpenCV with DevCPP_, you can
+try running a sample code.
+
+
+
+__OpenCV__ can also be __configured__ with CodeBlocks and VisualC++ by
+following the instructions on provided link
+
+- CodeBlocks: http://opencv.willowgarage.com/wiki/MinGW
+
+- VisualC++: http://www.scribd.com/doc/60304851/Steps-to-Integrate-Opencv-2-2-
+With-Visual-Studio-2010
+
+##### By now, you must be having a compiler integrated with OpenCV library. Before I move to next section in which I will take you through basic image processing let me introduce you to the basic OpenCV modules.
+
+
+Basically there are four modules. I’ll explain briefly about each
+module.
+-__cv__ : Main OpenCV functions, Image processing and vision
+algorithms.
+
+- __cvaux__: Auxiliary (experimental) OpenCV functions.
+
+- __cxcore__: Data structures, linear algebra support, XML
+support drawing functions and other algorithms.
+
+- __highgui__: GUI functions, Image and Video I/O.
+
+Depending on what your program implements you wish to use,
+you should include corresponding modules.
