@@ -292,9 +292,9 @@ images discussed) without specifying pixel values
 - __output=cvCloneImage(input) -----Copies image from input to output__
 - __cvCvtColor( input, output, conversion type)
  __{ Conv. type : CV_BGR2GRAY ,CV_BGR2HSV}
- __-----Saves input image in output pointer in
- other color space__
-- cvSaveImage("output.jpg",output)
+ __-----Saves input image in output pointer in__
+ __other color space__
+- __cvSaveImage("output.jpg",output)
  __-----Saves image pointed by output naming it output__
 ## 3. Morphological operations on a image
 There are two different kinds of morphological operations :
