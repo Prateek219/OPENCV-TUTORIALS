@@ -621,7 +621,7 @@ __GWL_EXSTYLE) | WS_EX_TOPMOST);__
 
 ShowWindow(win_handle, SW_SHOW);
 
-Now, some playing with human features:
+_Now, some playing with human features:_
 
 
 
