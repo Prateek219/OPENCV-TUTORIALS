@@ -159,3 +159,22 @@ and white( 0 for black and 255 for white)
 shade of corresponding color
 - Depth of a RGB image is 8(bits)
 - Number of channels for a RGB image is 3
+
+![Screenshot (90)](https://user-images.githubusercontent.com/64007722/79853849-36016800-83e6-11ea-8087-5e2b057ca352.png)
+
+# Starting with Processing Images
+_I will be using C language and DevC++ as compiler embedded with
+OpenCV2.1. You need not worry if you are using a different compiler._
+## 1. Displaying an image
+To start, let’s get through a simple program of displaying an image already
+saved on the disk (something similar to a ‘hello world type program’).
+Every C code starts with inclusion of header file and this is nothing
+different. So, we will include basic header files needed for our program.
+We will need following header files:
+- __cv.h
+- __highgui.h
+
+### Image is stored as a structure IplImage with following elements
+```
+
+```
