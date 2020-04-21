@@ -708,3 +708,14 @@ if( cascade )
                                                         // Release the temp image created.
  cvReleaseImage( &temp );
 ```
+
+## 12. Cropping an Image
+cvSetImageROI(img, cvRect(origin_x,origin_y, width, hieght));
+
+IplImage *face = cvCreateImage(cvGetSize(img),img->depth,img-
+
+>nChannels);
+
+ cvCopy(img, face, NULL); //Copies interested area of image in face
+ 
+cvResetImageROI(img);
