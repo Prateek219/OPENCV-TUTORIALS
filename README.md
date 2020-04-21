@@ -304,5 +304,69 @@ There are two different kinds of morphological operations :
    * 1. Erosion
 
    * 2. Dilation
+   
 For carrying out morphological operations we need to specify type of
 structural element and number of iterations.
+
+
+Erosion erodes the image. It tries to bring uniformity in the image by
+converting bright points in neighborhood of points of less intensity into
+darker ones
+
+
+Notice the change in eyes, illuminates spots in the eyes are removed
+because in the input image there is a stark change in illumination at points
+near pupil.
+
+Dilation dilates the image. It tries to bring uniformity in image by
+converting dark points in neighborhood of points of higher intensity into
+bright ones
+
+
+Here, is the code which erodes and dilates an image saved in the same
+folder where c code is saved
+
+```
+#include "cxcore.h"
+#include "highgui.h"
+#include<cv.h>
+int main()
+{
+int i=1;
+IplImage* input;
+IplImage* dilate;
+IplImage* erode;
+IplConvKernel *structure_element;
+structure_element=cvCreateStructuringElementEx(i*2+1, i*2+1,
+i,i,CV_SHAPE_ELLIPSE ); // Defines the structural element
+cvNamedWindow("ii", 1);
+cvNamedWindow("oo_dilate",1);
+cvNamedWindow("oo_erode",1);
+input = cvLoadImage("apple.jpg",1);
+cvShowImage( "ii", input );
+//make erode and dilate, clones of input (remember that cloning
+automatically copies height, width etc.)
+dilate=cvCloneImage( input );
+erode=cvCloneImage( input );
+//dilate image
+cvDilate(input,dilate,structure_element ,1);
+//cvDilate(input image pointer , output image pointer , structural element
+, number of iterations)
+//erode image
+cvErode(input,erode,NULL,1);
+//cvErode(input image pointer , output image pointer , structural element
+, number of iterations)
+cvShowImage( "oo_dilate", dilate);
+cvShowImage( "input", input);
+cvShowImage( "oo_erode", erode );
+cvWaitKey(0);
+cvDestroyWindow( "ii" );
+cvDestroyWindow( "oo_dilate" );
+cvDestroyWindow( "oo_erode" );
+cvReleaseImage( &input );
+cvReleaseImage( &dilate );
+cvReleaseImage( &erode );
+return 0;
+}
+```
+
