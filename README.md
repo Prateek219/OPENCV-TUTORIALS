@@ -429,3 +429,67 @@ continue the process until we reach the (i,j) pixel.
 
 
 ![Screenshot (101)](https://user-images.githubusercontent.com/64007722/79863178-ea09ef80-83f4-11ea-9dcb-1d05e1cf671f.png)
+![Screenshot (104)](https://user-images.githubusercontent.com/64007722/79863419-5f75c000-83f5-11ea-812a-a7c85eb23e53.png)
+
+##### zero and prints all image related data.
+```
+#include "cv.h"
+#include "highgui.h"
+int main()
+{
+ int i , j;
+ IplImage* input;
+ IplImage* output;
+ input=cvLoadImage(“input.jpg",1);
+ cvNamedWindow("ii",1);
+ cvShowImage("ii",input);
+ printf("nChannels=%d width=%d height=%d widthstep=%d depth=%d
+align=%d",input->nChannels,input->width,input->height,input-
+>widthStep,input->depth,input->align);
+ output=cvCreateImage(cvSize(input->width, input->height ),input-
+>depth, input->nChannels );
+ uchar *pinput = (uchar*)input->imageData;
+//saving data pointer of input image as pinput
+ uchar *poutput = ( uchar* )output->imageData;
+//saving data pointer of output image as poutput
+ for(i=0;i<input->height;i++)
+ for(j=0;j<input->width;j++)
+ {
+ poutput[i*input->widthStep + j*input->nChannels + 2]
+ =pinput[i*input->widthStep + j*input->nChannels + 2];
+//copying red elements of input to output
+ poutput[i*input->widthStep + j*input->nChannels + 0]=0;
+//initialising blue elements of output image as 0
+ poutput[i*input->widthStep + j*input->nChannels + 1]=0;
+//initializing green elements of output image as 0;
+//Note: initialing B and G as 0 may be excluded but recommended as it
+may take garbage value, test it yourself
+ }
+ cvNamedWindow("aa",1);
+ cvShowImage("aa",output);
+ cvWaitKey(0);
+ cvDestroyWindow("ii");
+ cvDestroyWindow( "aa" );
+ cvReleaseImage( &output );
+ cvReleaseImage( &input );
+ return 0;
+}
+
+```
+
+## 6. Video Input
+What is a video? A video is basically a collection of continuous images
+
+displayed at a certain rate (generally 30 frames per second).
+
+To extract the frames from video first we need to attach this video to the
+
+input stream and then extract those as and when required.
+
+To attach the video to input stream we use the following function
+
+__CvCapture* capture=cvCreateFileCapture("file_name.avi" );__
+
+And for extracting frames use the following function:
+
+__Ipl Image* input_frame=cvQueryFrame(capture);__
