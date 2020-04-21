@@ -15,6 +15,7 @@ would need a compiler.
 To start off, you need to install 'OpenCV' and a 'compiler'
 and then establish a linkage between the two (i.e. Compiler
 is able to use the functions available with the library).
+___
 
 ## GETTING STARTED:
 OpenCV can be downloaded from the following link:
@@ -31,6 +32,7 @@ editions/visual-cpp-express
 Install one of the above compilers and next you would need to
 link the library with the installed compiler.
 
+
 ### For integrating OpenCV with DevC++ :
 - First of all, you have to indicate the header files you want to add. For
 that, select Tools->Compiler Options.
@@ -46,6 +48,7 @@ lml210
 [ note that the text in inverted commas is basically the location of the
 lib(libraries) folder of OpenCV2.1. So, it won't work well if u've not
 installed OpenCV in the default folder. ]
+___
 
 ## Configuring included files
 Next, click on Directories and then on C Includes to add all the headers,
@@ -55,12 +58,14 @@ work.
 
 __If you want to code in C++ then do the same for C++ includes__
 ![Screenshot (80)](https://user-images.githubusercontent.com/64007722/79849655-5fb79080-83e0-11ea-94f7-2208f91824a1.png)
+___
 
 ## Configuring static library files
 In the libraries section under the same heading directories you will
 need to add __C:\ OpenCV2.1\lib__ . (if already present, ignore this
 step.)
 ![Screenshot (83)](https://user-images.githubusercontent.com/64007722/79850748-f9cc0880-83e1-11ea-94b4-dfbc56d145da.png)
+___
 
 ## Configuring dynamic library files
 
@@ -80,6 +85,7 @@ following the instructions on provided link
 
 - VisualC++: http://www.scribd.com/doc/60304851/Steps-to-Integrate-Opencv-2-2-
 With-Visual-Studio-2010
+___
 
 ##### By now, you must be having a compiler integrated with OpenCV library. Before I move to next section in which I will take you through basic image processing let me introduce you to the basic OpenCV modules.
 
@@ -98,6 +104,7 @@ support drawing functions and other algorithms.
 
 Depending on what your program implements you wish to use,
 you should include corresponding modules.
+___
 
 
 # Image Processing
@@ -136,6 +143,7 @@ the pixel can have just one of the two possible values.
 - Depth of a binary image is 1(bit)
 
 ![Screenshot (85)](https://user-images.githubusercontent.com/64007722/79853135-482ed680-83e5-11ea-86cf-a44af829bc67.png)
+___
 
 
 
@@ -148,6 +156,7 @@ and white( 0 for black and 255 for white)
 - Depth of a gray scale image is 8(bits)
 
 ![Screenshot (88)](https://user-images.githubusercontent.com/64007722/79853510-ca1eff80-83e5-11ea-80ce-6583684197e4.png)
+___
 
 
 ## RGB Image
@@ -161,6 +170,7 @@ shade of corresponding color
 - Number of channels for a RGB image is 3
 
 ![Screenshot (90)](https://user-images.githubusercontent.com/64007722/79853849-36016800-83e6-11ea-8087-5e2b057ca352.png)
+___
 
 # Starting with Processing Images
 _I will be using C language and DevC++ as compiler embedded with
@@ -173,6 +183,7 @@ different. So, we will include basic header files needed for our program.
 We will need following header files:
 - __cv.h
 - __highgui.h
+___
 
 ### Image is stored as a structure IplImage with following elements
 
@@ -181,6 +192,7 @@ We will need following header files:
 
 __There is no need to go into the details right now, we will get acquainted
 with these elements during the course of the tutorial.__
+___
 
 
 #### Steps involved:
@@ -236,6 +248,7 @@ press and returns the ASCII value of the key pressed.
 
 - If positive number is given as input: - Waits for corresponding
 milliseconds.
+___
 
 #### NOW THE FINAL CODE LOOKS LIKE
 
@@ -267,6 +280,7 @@ __cvDestroyWindow( "Output" );__ // _destroy the window_
 __cvReleaseImage( &input );__ // _release the memory for the image_
 
 Include above two lines to make it a good simple code.
+___
 
 
 ## 1. Creating an image
@@ -287,6 +301,8 @@ __output=cvCreateImage(cvGetSize(input),IPL_DEPTH_8U,3)__
 This will create a RGB image(most general case among the three types of
 
 images discussed) without specifying pixel values
+___
+
 ## 2. Some common OpenCV functions
 
 - output=cvCloneImage(input) -----__Copies image from input to output__
@@ -298,6 +314,9 @@ images discussed) without specifying pixel values
  
 - __cvSaveImage("output.jpg",output)
  __-----Saves image pointed by output naming it output__
+ 
+ ___
+ 
 ## 3. Morphological operations on a image
 There are two different kinds of morphological operations :
 
@@ -374,6 +393,8 @@ cvReleaseImage( &erode );
 return 0;
 }
 ```
+
+___
 ## 4. Thresholding an image
 Thresholding an image is one of the simplest ways of image segmentation.
 As the name suggests, it carries out its change according to a set
@@ -404,6 +425,8 @@ Before we threshold the image we need to make a clone of the image.
 Example image for binary image has been obtained from the example
 grayscale image of ‘beautiful Lena’.
 
+___
+
 ## 5. Image data
 An image’s data is stored as a character array whose first element is
 pointed by:-
@@ -430,6 +453,8 @@ continue the process until we reach the (i,j) pixel.
 
 ![Screenshot (101)](https://user-images.githubusercontent.com/64007722/79863178-ea09ef80-83f4-11ea-9dcb-1d05e1cf671f.png)
 ![Screenshot (104)](https://user-images.githubusercontent.com/64007722/79863419-5f75c000-83f5-11ea-812a-a7c85eb23e53.png)
+
+___
 
 ##### zero and prints all image related data.
 ```
@@ -494,6 +519,8 @@ And for extracting frames use the following function:
 
 __Ipl Image* input_frame=cvQueryFrame(capture);__
 
+___
+
 ## 7. Camera Input
 First camera needs to be initialized and then image is captured and further
 
@@ -517,6 +544,7 @@ Finally image is captured and stored in variable of type IplImage*
 
 __frame=cvQueryFrame(capture);__
 
+___
 
 ## 8. Video input through camera
 This is similar to video input all you need is attach the video from camera
@@ -530,6 +558,8 @@ There is no need to initialize the camera in this case because frame is
 captured regularly. Again, 0 for default webcam and use 1 for input
 
 through external camera.
+
+___
 
 ## 9. Playing with the mouse
 For moving the mouse we use the following function declaration:
@@ -574,6 +604,8 @@ cvSetMouseCallback("image", my_mouse_callback, NULL);
  cvShowImage("image",image);
 
 ```
+
+___
 
 ## 10. Displaying an Image in Full screen
 Displaying an image in full screen basically means getting rid of the
@@ -621,7 +653,9 @@ __GWL_EXSTYLE) | WS_EX_TOPMOST);__
 
 __ShowWindow(win_handle, SW_SHOW);__
 
-_Now, some playing with human features:_
+_Now, some playing with human features:
+
+___
 
 ## 11. Haar Cascades
 Haar like features are digital image features used in object recognition.
@@ -709,6 +743,8 @@ if( cascade )
  cvReleaseImage( &temp );
 ```
 
+___
+
 ## 12. Cropping an Image
 cvSetImageROI(img, cvRect(origin_x,origin_y, width, hieght));
 
@@ -719,6 +755,8 @@ IplImage *face = cvCreateImage(cvGetSize(img),img->depth,img-
  cvCopy(img, face, NULL); // _Copies interested area of image in face_
  
 cvResetImageROI(img);
+
+___
 
 ## 13. Blob detection edge detection
 These are some of other actions which can be performed using OpenCV
