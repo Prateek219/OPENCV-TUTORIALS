@@ -313,7 +313,7 @@ Erosion erodes the image. It tries to bring uniformity in the image by
 converting bright points in neighborhood of points of less intensity into
 darker ones
 
-![Screenshot (95)](https://user-images.githubusercontent.com/64007722/79861529-2be56680-83f2-11ea-8acb-0e07560b057f.png)
+      ![Screenshot (95)](https://user-images.githubusercontent.com/64007722/79861529-2be56680-83f2-11ea-8acb-0e07560b057f.png)
 
 
 Notice the change in eyes, illuminates spots in the eyes are removed
